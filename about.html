@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Campus Navigator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles for team members section */
+        .team-member-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .team-member-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bs-primary);
+            margin: 0 auto;
+        }
+        
+        .team-leader-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--bs-primary);
+            color: white;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .team-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .team-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--bs-primary);
+            bottom: 0;
+            left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://imgs.search.brave.com/mJHskyx2mtBVIU6X6JrCCzqOKP9076RDyRUedU9Pvw0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnJhbmRmZXRjaC5p/by9pZHByZkpTd293/L3cvMTYwMC9oLzMz/My90aGVtZS9saWdo/dC9sb2dvLnBuZz9j/PTFieGlkNjRNdXA3/YWN6ZXdTQVlNWCZ0/PTE3NDIyNjAyMDIy/NDk" alt="Graphic Era University Logo" height="40" class="me-2">
+                    Campus Navigator
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="import_data.html">Import Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About the Project Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-4 fw-bold mb-4">About Campus Navigator</h1>
+                        <p class="lead mb-4">An intelligent campus navigation system designed to help students, faculty, and visitors easily find their way around Graphic Era Deemed University.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-7">
+                        <h2 class="mb-4">The Project</h2>
+                        <p>The Smart Campus Navigator is a comprehensive web-based application designed to help students, faculty, staff, and visitors efficiently navigate the Graphic Era Deemed University campus. This system combines powerful backend algorithms written in C with a user-friendly web interface to provide detailed information about campus locations, including classrooms, laboratories, offices, and other facilities.</p>
+                        
+                        <h3 class="mt-4">Our Mission</h3>
+                        <p>To create an intuitive navigation solution that reduces the time and stress involved in finding locations within the campus, empowering new students and visitors to navigate confidently without assistance.</p>
+                        
+                        <h3 class="mt-4">Key Features</h3>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="feature-icon text-primary me-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Building-Based Navigation</h5>
+                                        <p class="text-muted">Click on specific blocks to explore their facilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="feature-icon text-primary me-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Advanced Search</h5>
+                                        <p class="text-muted">Find locations by name, room number, or type.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="feature-icon text-primary me-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                            <polyline points="10 9 9 9 8 9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Detailed Information</h5>
+                                        <p class="text-muted">Comprehensive details about each location.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="feature-icon text-primary me-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5>Interactive Maps</h5>
+                                        <p class="text-muted">Visual representation of campus buildings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="mt-4">Technology Stack</h3>
+                        <p>The Campus Navigator is built using a combination of modern technologies:</p>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item"><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap 5</li>
+                            <li class="list-group-item"><strong>Backend:</strong> Python, Flask, C</li>
+                            <li class="list-group-item"><strong>Database:</strong> PostgreSQL with SQLAlchemy ORM</li>
+                            <li class="list-group-item"><strong>Maps:</strong> Interactive SVG-based campus visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title">Development Team</h4>
+                                <p class="card-text">This project was developed as part of the curriculum at Graphic Era Deemed University, combining expertise in algorithms, database design, and web development.</p>
+                                <p class="card-text">The integration of C algorithms with Python web development demonstrates the practical application of computer science fundamentals to solve real-world navigation challenges.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title">How It Works</h4>
+                                <ol class="card-text">
+                                    <li class="mb-2">Select a building block or use the search function</li>
+                                    <li class="mb-2">Filter by floor, location type, or search term</li>
+                                    <li class="mb-2">View detailed information about each location</li>
+                                    <li class="mb-2">Find connected and nearby locations</li>
+                                    <li class="mb-2">Use the interactive map for visual guidance</li>
+                                </ol>
+                                <p class="card-text mt-3">Administrators can easily import and update campus data through the Import Data section using CSV files.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Members Section -->
+                        <!-- Team Members Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="team-title mb-4">Our Team</h2>
+                <p class="lead">Meet the talented students behind the Campus Navigator project</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Team Leader -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 team-member-card">
+                    <div class="team-leader-badge">Team Leader</div>
+                    <div class="card-body text-center pt-4">
+                        <div class="mb-3">
+                            <div class="team-member-img d-flex align-items-center justify-content-center bg-light">
+                                <span class="display-4 text-primary">SM</span>
+                            </div>
+                        </div>
+                        <h4 class="card-title">Satwik Malviya</h4>
+                        <p class="card-text text-muted">Team Leader</p>
+                        <p class="card-text small">Led the project development and coordinated team efforts to create this navigation system.</p>
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <a href="https://www.linkedin.com/in/satwik-malviya-315249248/" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/Satwik-CS" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 team-member-card">
+                    <div class="card-body text-center pt-4">
+                        <div class="mb-3">
+                            <div class="team-member-img d-flex align-items-center justify-content-center bg-light">
+                                <span class="display-4 text-primary">SK</span>
+                            </div>
+                        </div>
+                        <h4 class="card-title">Shivam Kumar</h4>
+                        <p class="card-text text-muted">Backend Developer</p>
+                        <p class="card-text small">Responsible for developing the Python-Flask backend and database integration.</p>
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <a href="https://www.linkedin.com/in/shivamborn2shine/" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/Shivamborn2shine" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 team-member-card">
+                    <div class="card-body text-center pt-4">
+                        <div class="mb-3">
+                            <div class="team-member-img d-flex align-items-center justify-content-center bg-light">
+                                <span class="display-4 text-primary">NR</span>
+                            </div>
+                        </div>
+                        <h4 class="card-title">Naisha Ranjan</h4>
+                        <p class="card-text text-muted">Frontend Developer</p>
+                        <p class="card-text small">Designed and implemented the user interface and interactive elements.</p>
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <a href="https://www.linkedin.com/in/naisha-ranjan-74b09a326/" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/NaishaRanjan" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card h-100 team-member-card">
+                    <div class="card-body text-center pt-4">
+                        <div class="mb-3">
+                            <div class="team-member-img d-flex align-items-center justify-content-center bg-light">
+                                <span class="display-4 text-primary">PN</span>
+                            </div>
+                        </div>
+                        <h4 class="card-title">Priyanshu Negi</h4>
+                        <p class="card-text text-muted">Algorithm Developer</p>
+                        <p class="card-text small">Implemented the C algorithms for efficient search and navigation functionality.</p>
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <a href="paste your link here" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                </svg>
+                            </a>
+                            <a href="paste your link here" class="btn btn-sm btn-outline-primary rounded-circle" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="card bg-primary text-white shadow">
+                    <div class="card-body py-4">
+                        <h4 class="mb-3">Supervised By</h4>
+                        <p class="lead mb-0">Department of Computer Science & Engineering</p>
+                        <p>Graphic Era Deemed University, Dehradun</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- University Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <h2 class="text-center mb-5">About Graphic Era Deemed University</h2>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Excellence in Education</h3>
+                                <p class="card-text">Graphic Era Deemed University (GEU) is a premier educational institution located in Dehradun, Uttarakhand, India. Established in 1993 as Graphic Era Institute of Technology, it was accorded university status in 2008 and has been recognized as a Deemed University by the UGC.</p>
+                                <p class="card-text">With a focus on academic excellence, innovation, and holistic development, GEU has established itself as one of the leading universities in Northern India.</p>
+                                
+                                <h4 class="mt-4">Vision & Mission</h4>
+                                <p class="card-text">To be an outstanding institution of higher learning that nurtures youth into engineering professionals for betterment of society.</p>
+                                
+                                <h4 class="mt-4">Accreditations & Rankings</h4>
+                                <ul>
+                                    <li>NAAC 'A' Grade accreditation</li>
+                                    <li>Ranked among top 100 universities in India by NIRF</li>
+                                    <li>UGC approved curriculum and programs</li>
+                                    <li>NBA accredited engineering programs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">Academic Programs</h3>
+                                <p class="card-text">GEU offers a wide range of undergraduate, postgraduate, and doctoral programs across various disciplines:</p>
+                                
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <h5>Engineering</h5>
+                                        <ul>
+                                            <li>Computer Science & Engineering</li>
+                                            <li>Information Technology</li>
+                                            <li>Mechanical Engineering</li>
+                                            <li>Civil Engineering</li>
+                                            <li>Electrical Engineering</li>
+                                            <li>Electronics & Communication</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Other Disciplines</h5>
+                                        <ul>
+                                            <li>Management Studies</li>
+                                            <li>Computer Applications</li>
+                                            <li>Commerce & Finance</li>
+                                            <li>Life Sciences</li>
+                                            <li>Media & Mass Communication</li>
+                                            <li>Law</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="mt-4">Campus Facilities</h4>
+                                <p class="card-text">The university boasts state-of-the-art infrastructure including:</p>
+                                <ul>
+                                    <li>Modern classrooms and lecture halls</li>
+                                    <li>Well-equipped laboratories and research centers</li>
+                                    <li>Central library with extensive resources</li>
+                                    <li>Sports facilities and gymnasium</li>
+                                    <li>Hostel accommodations for boys and girls</li>
+                                    <li>Food courts and cafeterias</li>
+                                    <li>24/7 Wi-Fi enabled campus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Industry Connections & Placement</h3>
+                                <p class="card-text">GEU has strong ties with industry leaders and offers excellent placement opportunities for students. The university's dedicated Training & Placement Cell organizes campus recruitment drives, preparing students for successful careers.</p>
+                                
+                                <h4 class="mt-3">Research & Innovation</h4>
+                                <p class="card-text">The university promotes a culture of research and innovation, with well-established research centers, regular publication of research papers, and organization of conferences and seminars.</p>
+                                
+                                <h4 class="mt-3">Contact Information</h4>
+                                <address>
+                                    <strong>Graphic Era Deemed University</strong><br>
+                                    566/6, Bell Road, Clement Town<br>
+                                    Dehradun, Uttarakhand 248002<br>
+                                    India<br>
+                                    <br>
+                                    <strong>Phone:</strong> +91-135-2642727, 2642828<br>
+                                    <strong>Website:</strong> <a href="https://www.geu.ac.in" target="_blank">www.geu.ac.in</a>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Campus Map Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="mb-4">Our Campus Layout</h2>
+                        <p class="lead mb-5">The Graphic Era Deemed University campus is thoughtfully designed to provide a conducive environment for learning and development.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-0">
+                                <div class="campus-overview-map">
+                                    <!-- You can replace this with an actual campus image or map -->
+                                    <div class="campus-blocks-grid p-4">
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>BTech Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>CSIT Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>Paramedical Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>Chemistry Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>AP Nautical Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>BioTech Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>Petroleum Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>Mechanical Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="campus-block">
+                                                    <div class="block-content">
+                                                        <span>Civil Block</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center p-3">
+                                    <p class="text-muted small mb-0">Use our Campus Navigator to explore detailed information about each building and its facilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer mt-auto py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Campus Navigator</h3>
+                    <p>An intelligent campus navigation system for Graphic Era Deemed University.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="import_data.html">Import Data</a></li>
+                        <li><a href="#" onclick="window.history.back(); return false;">Go Back</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Graphic Era Deemed University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data-store.js"></script>
+</body>
+</html>
