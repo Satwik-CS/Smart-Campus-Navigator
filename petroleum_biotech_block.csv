@@ -1,0 +1,34 @@
+Block,Floor,Room,Description
+Petroleum/Biotech,Ground,TR-32,Classroom
+Petroleum/Biotech,Ground,CR-33,SPE (Museum)
+Petroleum/Biotech,Ground,CR-34,Male Washroom
+Petroleum/Biotech,Ground,PE Lab-1,Heat & Mass Transfer Lab
+Petroleum/Biotech,Ground,PE Lab-2,Fluid & Particle Mechanics Lab
+Petroleum/Biotech,Ground,CR-26,GEU-2
+Petroleum/Biotech,Ground,PE Lab-3,Lab
+Petroleum/Biotech,Ground,PE Lab-4,Geophysical Lab
+Petroleum/Biotech,Ground,Female Washroom,Washroom
+Petroleum/Biotech,Ground,DES,Department Of Environmental Science
+Petroleum/Biotech,First,CR-35,Staff Room
+Petroleum/Biotech,First,CR-36,Classroom
+Petroleum/Biotech,First,CR-37,Classroom
+Petroleum/Biotech,First,CR-38,Classroom
+Petroleum/Biotech,First,Female Washroom,Washroom
+Petroleum/Biotech,First,Research Lab-1,Lab
+Petroleum/Biotech,First,CR-28,GEU-4
+Petroleum/Biotech,First,CR-27,Classroom
+Petroleum/Biotech,Second,TR-46,Classroom
+Petroleum/Biotech,Second,TR-47,Classroom
+Petroleum/Biotech,Second,Staff Room,Room
+Petroleum/Biotech,Second,CR-45,Classroom
+Petroleum/Biotech,Second,TR-44,Classroom
+Petroleum/Biotech,Second,Male Washroom,Washroom
+Petroleum/Biotech,Second,CR-31,GEU-8
+Petroleum/Biotech,Second,CR-30,Classroom
+Petroleum/Biotech,Second,CR-29,Classroom
+Petroleum/Biotech,Second,Female Washroom,Washroom
+Petroleum/Biotech,Third,Female Washroom,Washroom
+Petroleum/Biotech,Third,CR-44,GEU-10
+Petroleum/Biotech,Third,CR-43,GEU-9
+Petroleum/Biotech,Third,Bioinformatics Lab,GEU Computer Lab
+Petroleum/Biotech,Third,Plant Tissue Culture Lab,Lab

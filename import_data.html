@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data - Campus Navigator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/geu-logo.png" alt="Graphic Era University Logo" height="40" class="me-2">
+                    Campus Navigator
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="import_data.html">Import Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container py-5">
+            <h1 class="mb-4">Import Campus Data</h1>
+            <p class="lead mb-4">Use this page to import or update campus data through CSV files.</p>
+            
+            <!-- Alert Messages -->
+            <div id="import-alerts"></div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Import Buildings</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Upload a CSV file containing building data.</p>
+                            <p><strong>Required CSV format:</strong> code,name,description,floors</p>
+                            <p><em>Example: A,A Block,Main Administrative Block,4</em></p>
+                            <form id="buildings-form" class="import-form">
+                                <div class="mb-3">
+                                    <label for="buildings_file" class="form-label">Buildings CSV File</label>
+                                    <input type="file" class="form-control" id="buildings_file" name="file" accept=".csv" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Import Buildings</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Import Location Types</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Upload a CSV file containing location type data.</p>
+                            <p><strong>Required CSV format:</strong> name,description</p>
+                            <p><em>Example: Classroom,Regular classroom for lectures</em></p>
+                            <form id="location-types-form" class="import-form">
+                                <div class="mb-3">
+                                    <label for="location_types_file" class="form-label">Location Types CSV File</label>
+                                    <input type="file" class="form-control" id="location_types_file" name="file" accept=".csv" required>
+                                </div>
+                                <button type="submit" class="btn btn-success">Import Location Types</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Import Locations</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Upload a CSV file containing location data.</p>
+                            <p><strong>Required CSV format:</strong> name,room_number,floor,building_code,type_name,description,capacity,x_coordinate,y_coordinate,facilities</p>
+                            <p><em>Example: Dean's Office,A-101,1,A,Office,Office of the Dean,5,100,150,"AC, Computer"</em></p>
+                            <p class="text-danger">Note: Buildings and location types must be imported first!</p>
+                            <form id="locations-form" class="import-form">
+                                <div class="mb-3">
+                                    <label for="locations_file" class="form-label">Locations CSV File</label>
+                                    <input type="file" class="form-control" id="locations_file" name="file" accept=".csv" required>
+                                </div>
+                                <button type="submit" class="btn btn-info">Import Locations</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">Import Paths</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Upload a CSV file containing path data.</p>
+                            <p><strong>Required CSV format:</strong> from_room,to_room,distance</p>
+                            <p><em>Example: A-101,A-102,10</em></p>
+                            <p class="text-danger">Note: Locations must be imported first!</p>
+                            <form id="paths-form" class="import-form">
+                                <div class="mb-3">
+                                    <label for="paths_file" class="form-label">Paths CSV File</label>
+                                    <input type="file" class="form-control" id="paths_file" name="file" accept=".csv" required>
+                                </div>
+                                <button type="submit" class="btn btn-warning">Import Paths</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">Clear All Data</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Clear all campus data from the database. <strong>This action cannot be undone!</strong></p>
+                            <button id="clear-data-btn" class="btn btn-danger">Clear All Data</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0">Download Template CSV Files</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Download template CSV files to help you format your data correctly.</p>
+                            <a href="templates/buildings_template.csv" class="btn btn-outline-primary mb-2" download>Buildings Template</a>
+                            <a href="templates/location_types_template.csv" class="btn btn-outline-success mb-2" download>Location Types Template</a>
+                            <a href="templates/locations_template.csv" class="btn btn-outline-info mb-2" download>Locations Template</a>
+                            <a href="templates/paths_template.csv" class="btn btn-outline-warning mb-2" download>Paths Template</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Campus Navigator</h3>
+                    <p>An intelligent campus navigation system for Graphic Era Deemed University.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="import_data.html">Import Data</a></li>
+                        <li><a href="#" onclick="window.history.back(); return false;">Go Back</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Graphic Era Deemed University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/import.js"></script>
+</body>
+</html>

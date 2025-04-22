@@ -1,0 +1,3 @@
+from_room,to_room,distance
+A-101,A-102,10
+B-101,B-201,40
