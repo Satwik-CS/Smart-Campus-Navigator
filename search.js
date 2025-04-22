@@ -77,8 +77,68 @@ function displaySearchResults() {
         document.getElementById('floor_filter').value = floor;
     }
     
-    // In a real application, this would load results from the backend
-    // For this static version, we'll keep the sample results
+    // Get data from the data store
+    const locations = window.DataStore.getItems('LOCATIONS');
+    
+    // Filter data based on search parameters
+    let results = [...locations];
+    
+    // Filter by building if specified
+    if (buildingId !== 'all') {
+        results = results.filter(item => item.building_id === parseInt(buildingId));
+    }
+    
+    // Filter by location type if specified
+    if (locationType !== 'all') {
+        results = results.filter(item => item.type_id === parseInt(locationType));
+    }
+    
+    // Filter by floor if specified
+    if (floor !== 'all') {
+        results = results.filter(item => item.floor === parseInt(floor));
+    }
+    
+    // Filter by search term if provided
+    if (searchTerm) {
+        const term = searchTerm.toLowerCase();
+        results = results.filter(item => 
+            item.name.toLowerCase().includes(term) || 
+            item.room_number.toLowerCase().includes(term) ||
+            item.description.toLowerCase().includes(term) ||
+            item.building_name.toLowerCase().includes(term)
+        );
+    }
+    
+    // Display results
+    const resultsContainer = document.getElementById('search-results');
+    if (!resultsContainer) return;
+    
+    resultsContainer.innerHTML = '';
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = `
+            <div class="alert alert-info">
+                No locations found matching your search criteria. Please try different filters.
+            </div>
+        `;
+    } else {
+        results.forEach(item => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item mb-4 p-3 border rounded';
+            resultItem.innerHTML = `
+                <h3 class="result-title"><a href="location_details.html?id=${item.id}">${item.name}</a></h3>
+                <div class="result-details">
+                    <span class="badge bg-secondary me-2">Room: ${item.room_number}</span>
+                    <span class="badge bg-info me-2">Floor: ${item.floor}</span>
+                    <span class="badge bg-primary me-2">${item.building_name}</span>
+                    <span class="badge bg-success">${item.type_name}</span>
+                </div>
+                <p class="result-description mt-2">${item.description}</p>
+                <a href="location_details.html?id=${item.id}" class="btn btn-sm btn-outline-primary mt-2">View Details</a>
+            `;
+            resultsContainer.appendChild(resultItem);
+        });
+    }
     
     // Add filter functionality
     const filterForm = document.getElementById('filter-form');
@@ -116,8 +176,6 @@ function displaySearchResults() {
 }
 
 function updateFloorOptions(buildingId) {
-    // This function would typically make an AJAX request to get floors
-    // For this static version, we'll simulate it
     const floorSelect = document.getElementById('floor');
     if (!floorSelect) return;
     
@@ -127,12 +185,12 @@ function updateFloorOptions(buildingId) {
     // If "all buildings" is selected, no floors to show
     if (buildingId === 'all') return;
     
-    // Simulate floors based on building
-    let maxFloors = 4; // Default
+    // Try to get building from data store
+    const buildings = window.DataStore.getItems('BUILDINGS');
+    const building = buildings.find(b => b.id === parseInt(buildingId));
     
-    if (buildingId === '1') maxFloors = 4;  // A Block
-    else if (buildingId === '2') maxFloors = 5;  // B Block
-    else if (buildingId === '3') maxFloors = 3;  // C Block
+    // If building not found, use default 4 floors
+    const maxFloors = building ? building.floors : 4;
     
     // Add floor options
     for (let i = 1; i <= maxFloors; i++) {
